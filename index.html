@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Saby Errikos Camhis | Personal Homepage</title>
   
+  <!-- Google Fonts & Font Awesome -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -13,7 +14,7 @@
   <style>
     :root {
       --columbia-blue: #9BDDFF;
-      --columbia-blue-dark: #75b2e6;
+      --columbia-blue-dark: #6ba8dc;
       --columbia-navy: #1D3557;
       --cbs-blue: #002B7F;
       --bg-light: #F8FAFC;
@@ -23,7 +24,6 @@
       --border-color: #E2E8F0;
       --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
       --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
     }
 
     * {
@@ -105,7 +105,7 @@
     /* Hero Section */
     .hero {
       background: linear-gradient(135deg, rgba(155, 221, 255, 0.25) 0%, rgba(248, 250, 252, 1) 100%);
-      padding: 4rem 1.5rem 3rem;
+      padding: 3.5rem 1.5rem 2.5rem;
       border-bottom: 1px solid var(--border-color);
     }
 
@@ -114,22 +114,38 @@
       margin: 0 auto;
       display: flex;
       flex-direction: column;
-      gap: 1.5rem;
+      gap: 1.25rem;
     }
 
     .hero h1 {
-      font-size: 2.5rem;
+      font-size: 2.3rem;
       font-weight: 700;
       color: var(--columbia-navy);
       letter-spacing: -0.5px;
+    }
+
+    .hero-tagline {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--columbia-navy);
+      border-left: 3px solid var(--columbia-blue);
+      padding-left: 0.75rem;
+    }
+
+    .hero-bio {
+      font-size: 0.975rem;
+      color: var(--text-main);
+      max-width: 900px;
+      line-height: 1.65;
     }
 
     .contact-bar {
       display: flex;
       flex-wrap: wrap;
       gap: 1.5rem;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       color: var(--text-muted);
+      margin-top: 0.5rem;
     }
 
     .contact-item {
@@ -318,6 +334,7 @@
 </head>
 <body>
 
+  <!-- Navigation -->
   <header>
     <div class="nav-container">
       <a href="#" class="nav-brand">
@@ -335,11 +352,18 @@
     </div>
   </header>
 
+  <!-- Hero / Header Details -->
   <div class="hero">
     <div class="hero-container">
       <div>
         <h1>Saby Errikos Camhis</h1>
       </div>
+      <div class="hero-tagline">
+        Columbia MSAFA &rsquo;28 | Babson Magna Cum Laude | Ex-CBH Private Bank &amp; EY
+      </div>
+      <p class="hero-bio">
+        Candidate in the Master of Science in Accounting and Fundamental Analysis (MSAFA) program at Columbia Business School. Combining bottom-up equity research and forensic financial valuation with quantitative data science and automation to uncover mispriced assets and drive disciplined capital allocation.
+      </p>
       <div class="contact-bar">
         <a href="mailto:ecamhis1@gmail.com" class="contact-item">
           <i class="fa-solid fa-envelope"></i> ecamhis1@gmail.com
@@ -348,23 +372,26 @@
           <i class="fa-brands fa-linkedin"></i> LinkedIn
         </a>
         <span class="contact-item">
-          <i class="fa-solid fa-phone"></i> +30 694 406 5063
+          <i class="fa-solid fa-phone"></i> +1 347 387 6414
         </span>
         <span class="contact-item">
-          <i class="fa-solid fa-location-dot"></i> 6 Chaoulant St, 154-52, Athens, Greece
+          <i class="fa-solid fa-location-dot"></i> 150W 51st Street, New York, NY
         </span>
       </div>
     </div>
   </div>
 
+  <!-- Main Content -->
   <main>
 
+    <!-- 1. Work Experience -->
     <section id="experience">
       <div class="section-header">
         <h2>Work Experience</h2>
       </div>
       <div class="grid-container">
 
+        <!-- Hellenic Armed Forces -->
         <article class="card">
           <div class="card-top">
             <div>
@@ -384,6 +411,7 @@
           </div>
         </article>
 
+        <!-- Compagnie Bancaire Helvétique -->
         <article class="card">
           <div class="card-top">
             <div>
@@ -406,6 +434,7 @@
           </div>
         </article>
 
+        <!-- Ernst & Young -->
         <article class="card">
           <div class="card-top">
             <div>
@@ -428,12 +457,33 @@
       </div>
     </section>
 
+    <!-- 2. Education -->
     <section id="education">
       <div class="section-header">
         <h2>Education</h2>
       </div>
       <div class="grid-container">
 
+        <!-- Columbia Business School -->
+        <article class="card" style="border-left: 4px solid var(--cbs-blue);">
+          <div class="card-top">
+            <div>
+              <h3 class="card-title">Columbia Business School</h3>
+              <div class="card-subtitle">Master of Science in Accounting and Fundamental Analysis (MSAFA)</div>
+            </div>
+            <div class="card-meta">
+              <strong>New York, NY</strong><br>
+              Class of 2028
+            </div>
+          </div>
+          <div class="card-content">
+            <ul>
+              <li>Rigorous graduate coursework focused on advanced financial statement analysis, security valuation, quantitative modeling, and fundamental equity research.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- MIT -->
         <article class="card">
           <div class="card-top">
             <div>
@@ -453,6 +503,7 @@
           </div>
         </article>
 
+        <!-- Babson -->
         <article class="card">
           <div class="card-top">
             <div>
@@ -476,6 +527,7 @@
       </div>
     </section>
 
+    <!-- 3. Community Project -->
     <section id="community">
       <div class="section-header">
         <h2>Community Project</h2>
@@ -505,6 +557,7 @@
       </div>
     </section>
 
+    <!-- 4. Additional Information -->
     <section id="additional">
       <div class="section-header">
         <h2>Additional Information</h2>
@@ -531,6 +584,7 @@
 
   </main>
 
+  <!-- Footer -->
   <footer>
     <p>&copy; 2026 Saby Errikos Camhis. All rights reserved.</p>
   </footer>
