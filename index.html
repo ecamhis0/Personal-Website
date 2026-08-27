@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saby Errikos Camhis | Personal Homepage</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --columbia-blue: #9BDDFF;
+      --columbia-blue-dark: #75b2e6;
+      --columbia-navy: #1D3557;
+      --cbs-blue: #002B7F;
+      --bg-light: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --text-main: #1E293B;
+      --text-muted: #64748B;
+      --border-color: #E2E8F0;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    /* Top Navigation Bar */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.8rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--columbia-navy);
+      text-decoration: none;
+    }
+
+    .cbs-badge {
+      display: inline-flex;
+      align-items: center;
+      background: var(--cbs-blue);
+      color: #fff;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: var(--columbia-navy);
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, rgba(155, 221, 255, 0.25) 0%, rgba(248, 250, 252, 1) 100%);
+      padding: 4rem 1.5rem 3rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .hero-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--columbia-navy);
+      letter-spacing: -0.5px;
+    }
+
+    .contact-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .contact-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      color: var(--text-muted);
+      transition: color 0.2s ease;
+    }
+
+    .contact-item:hover {
+      color: var(--columbia-navy);
+    }
+
+    .contact-item i {
+      color: var(--columbia-blue-dark);
+    }
+
+    /* Main Container & Sections */
+    main {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 3.5rem;
+    }
+
+    section {
+      scroll-margin-top: 5rem;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 1.5rem;
+      border-bottom: 2px solid var(--columbia-blue);
+      padding-bottom: 0.5rem;
+    }
+
+    .section-header h2 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--columbia-navy);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Cards & Tiles Grid */
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--columbia-blue);
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.75rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .card-title {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--columbia-navy);
+    }
+
+    .card-subtitle {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--columbia-blue-dark);
+      margin-top: 2px;
+    }
+
+    .card-meta {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-align: right;
+    }
+
+    .badge-sub {
+      background-color: rgba(155, 221, 255, 0.2);
+      color: var(--columbia-navy);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      display: inline-block;
+      margin-top: 4px;
+    }
+
+    .card-content ul {
+      list-style-type: disc;
+      padding-left: 1.25rem;
+      margin-top: 0.75rem;
+    }
+
+    .card-content li {
+      margin-bottom: 0.5rem;
+      color: var(--text-main);
+      font-size: 0.925rem;
+    }
+
+    .card-content li:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Additional Info Grid */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .info-tile {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .info-tile h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--columbia-navy);
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .info-tile h3 i {
+      color: var(--columbia-blue-dark);
+    }
+
+    .info-tile p {
+      font-size: 0.9rem;
+      color: var(--text-main);
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border-color);
+      background-color: #FFFFFF;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .card-top {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .card-meta {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav-container">
+      <a href="#" class="nav-brand">
+        <span>Saby Errikos Camhis</span>
+        <span class="cbs-badge">COLUMBIA BUSINESS SCHOOL</span>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#community">Community Project</a></li>
+          <li><a href="#additional">Additional Info</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="hero-container">
+      <div>
+        <h1>Saby Errikos Camhis</h1>
+      </div>
+      <div class="contact-bar">
+        <a href="mailto:ecamhis1@gmail.com" class="contact-item">
+          <i class="fa-solid fa-envelope"></i> ecamhis1@gmail.com
+        </a>
+        <a href="https://www.linkedin.com/in/eric-camhis/" target="_blank" rel="noopener noreferrer" class="contact-item">
+          <i class="fa-brands fa-linkedin"></i> LinkedIn
+        </a>
+        <span class="contact-item">
+          <i class="fa-solid fa-phone"></i> +30 694 406 5063
+        </span>
+        <span class="contact-item">
+          <i class="fa-solid fa-location-dot"></i> 6 Chaoulant St, 154-52, Athens, Greece
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <main>
+
+    <section id="experience">
+      <div class="section-header">
+        <h2>Work Experience</h2>
+      </div>
+      <div class="grid-container">
+
+        <article class="card">
+          <div class="card-top">
+            <div>
+              <h3 class="card-title">Hellenic Armed Forces</h3>
+              <div class="card-subtitle">Signal Soldiers Corp</div>
+            </div>
+            <div class="card-meta">
+              <strong>Athens, Greece</strong><br>
+              2025 &ndash; Present
+            </div>
+          </div>
+          <div class="card-content">
+            <ul>
+              <li>Managed secure transmission of classified intelligence and strategic communications across different military branches and partners (NATO, Navy), raising on-time delivery rate from previous 87% baseline to 95%.</li>
+              <li>Transformed unit payroll system by aggregating and categorizing over 500 personnel, consolidating complex pay variables; accelerated on-boarding-to-payment lifecycle by 25%, ensuring 100% accurate compensation.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-top">
+            <div>
+              <h3 class="card-title">Compagnie Bancaire Helv&eacute;tique</h3>
+              <div class="card-subtitle">Rotational Trainee (Asset/Wealth Management, Fichier Central, Back Office)</div>
+              <span class="badge-sub">Private Bank with 16.3B CHF AUM</span>
+            </div>
+            <div class="card-meta">
+              <strong>Geneva, Switzerland</strong><br>
+              2024 &ndash; 2025
+            </div>
+          </div>
+          <div class="card-content">
+            <ul>
+              <li>Conducted bottom-up semiconductor analysis; identified INTC trading below tangible book; built DCF and turnaround model; set 100% upside target, outperforming NVDA and SPY by 53% and 67% year to date.</li>
+              <li>Developed reporting engine using Refinitiv API; eliminated manual referencing and implemented asset normalization and algorithmic weighting to detect overexposure and integrate ESG, reducing turnaround from days to minutes.</li>
+              <li>Constructed Golden Source security master file enabling T+1 settlement; synchronized siloed data via validation macros, cutting processing time by 20% and achieved near-zero errors in DVP and Franco transfers.</li>
+              <li>Leveraged primary research to identify LNG shipping cooling cycle; challenged $1.08B ask for four 174Km³ carriers; advised $1B fair-value counteroffer, $250M versus $270M each.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-top">
+            <div>
+              <h3 class="card-title">Ernst &amp; Young</h3>
+              <div class="card-subtitle">Transfer Pricing Associate</div>
+            </div>
+            <div class="card-meta">
+              <strong>Athens, Greece</strong><br>
+              2022 &ndash; 2023
+            </div>
+          </div>
+          <div class="card-content">
+            <ul>
+              <li>Conducted economic analysis for multibillion-dollar MNEs; performed benchmark studies and industry research to achieve arm's-length pricing; achieved 5% increase in optimization of global effective tax rates for Coca-Cola Hellas.</li>
+              <li>Constructed Local and Master Files, achieving 100% alignment with OECD guidelines; leveraged validation macros to improve comparable gross margin accuracy by 12%; achieved 0 audit adjustments and noncompliance penalties.</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="section-header">
+        <h2>Education</h2>
+      </div>
+      <div class="grid-container">
+
+        <article class="card">
+          <div class="card-top">
+            <div>
+              <h3 class="card-title">Massachusetts Institute of Technology</h3>
+              <div class="card-subtitle">Advanced Data Science Program</div>
+            </div>
+            <div class="card-meta">
+              <strong>Virtual</strong><br>
+              2023 &ndash; 2024
+            </div>
+          </div>
+          <div class="card-content">
+            <ul>
+              <li>Constructed multivariate housing price forecasting model, achieving 76.2% Adjusted R-squared; achieved mean absolute error of $3,200 utilizing p-value optimization and VIF testing, ensuring 100% feature significance.</li>
+              <li>Engineered predictive model for bank credit defaults utilizing Random Forest and hyperparameter optimization, achieving 91% test accuracy, 70% test recall, 85% test precision, and combined score of 81%.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-top">
+            <div>
+              <h3 class="card-title">Babson University</h3>
+              <div class="card-subtitle">BS, Finance and Economics</div>
+            </div>
+            <div class="card-meta">
+              <strong>Massachusetts, USA</strong><br>
+              2018 &ndash; 2022
+            </div>
+          </div>
+          <div class="card-content">
+            <ul>
+              <li>Graduated <em>magna cum laude</em>; recognized on Babson's Dean's List five times (top performing students); awarded Outstanding Student Award; 2022 &Omicron;&Delta;&Epsilon; Babson College Tau Chapter honor society inductee.</li>
+              <li>Won FME venture competition, securing funding to launch sustainable single-product start-up; built inventory-turnover supply chain to reduce cash conversion cycle by 45 days; achieved 27% net margin versus 20% industry average.</li>
+              <li>Assumed leadership of basketball club; organized intra-mural competitions; competed with local universities.</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="community">
+      <div class="section-header">
+        <h2>Community Project</h2>
+      </div>
+      <div class="grid-container">
+
+        <article class="card">
+          <div class="card-top">
+            <div>
+              <h3 class="card-title">Majani Mingi Sisal Estate</h3>
+              <div class="card-subtitle">Research Analyst</div>
+              <span class="badge-sub">Sisal Cultivation Business</span>
+            </div>
+            <div class="card-meta">
+              <strong>Nakuru, Kenya</strong><br>
+              2023 &ndash; 2024
+            </div>
+          </div>
+          <div class="card-content">
+            <ul>
+              <li>Conducted analysis on legacy sisal vs avocado cultivation; conceptualized and proposed partial transition to avocado to optimize footprint by eliminating significant Cap Ex, labour and utility; achieved 10% increase in ROI on plot.</li>
+              <li>Developed feasibility study to monetize unutilized sisal biomass waste into durable, eco-friendly bags; projected annual net income $120K with 24.5% IRR leveraging zero-cost raw material stream from existing rope production.</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="additional">
+      <div class="section-header">
+        <h2>Additional Information</h2>
+      </div>
+      <div class="info-grid">
+
+        <div class="info-tile">
+          <h3><i class="fa-solid fa-seedling"></i> Volunteering &amp; Conservation</h3>
+          <p>Volunteered with Why Not NGO to remove underwater, floating, and shoreline waste from Skyros beaches and port, contributing to marine conservation and environmental awareness; remediated 4K sqm; recovered &approx;1 ton of micro waste.</p>
+        </div>
+
+        <div class="info-tile">
+          <h3><i class="fa-solid fa-chess-knight"></i> Strategic Pursuits</h3>
+          <p>Achieved 1800+ rating on chess.com, ranking in 99th percentile globally, demonstrating strategic thinking, pattern recognition, disciplined preparation, and consistent performance under time pressure and competitive conditions.</p>
+        </div>
+
+        <div class="info-tile">
+          <h3><i class="fa-solid fa-trophy"></i> Athletics &amp; Competitions</h3>
+          <p>Demonstrated sustained success in both team and individual sports; basketball championship-winner in Geneva GAB tournament; won 2nd place in local tennis competition; achieved sub-30-second 50-meter freestyle swim.</p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Saby Errikos Camhis. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
