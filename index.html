@@ -233,6 +233,16 @@
       color: var(--columbia-navy);
     }
 
+    .card-title a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .card-title a:hover {
+      color: var(--cbs-blue);
+      text-decoration: underline;
+    }
+
     .card-subtitle {
       font-size: 0.95rem;
       font-weight: 500;
@@ -307,6 +317,51 @@
       color: var(--text-main);
     }
 
+    /* Language proficiency bars */
+    .lang-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-top: 0.25rem;
+    }
+
+    .lang-row {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .lang-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .lang-name {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--text-main);
+    }
+
+    .lang-level {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .lang-bar {
+      width: 100%;
+      height: 7px;
+      background: var(--border-color);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .lang-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--columbia-blue-dark), var(--cbs-blue));
+      border-radius: 4px;
+    }
+
     /* Footer */
     footer {
       border-top: 1px solid var(--border-color);
@@ -346,6 +401,7 @@
           <li><a href="#experience">Experience</a></li>
           <li><a href="#education">Education</a></li>
           <li><a href="#community">Community Project</a></li>
+          <li><a href="#projects">Projects</a></li>
           <li><a href="#additional">Additional Info</a></li>
         </ul>
       </nav>
@@ -417,7 +473,7 @@
             <div>
               <h3 class="card-title">Compagnie Bancaire Helv&eacute;tique</h3>
               <div class="card-subtitle">Rotational Trainee (Asset/Wealth Management, Fichier Central, Back Office)</div>
-              <span class="badge-sub">Private Bank with 16.3B CHF AUM</span>
+              <span class="badge-sub">Private Bank with 18.3B CHF AUM</span>
             </div>
             <div class="card-meta">
               <strong>Geneva, Switzerland</strong><br>
@@ -557,7 +613,37 @@
       </div>
     </section>
 
-    <!-- 4. Additional Information -->
+    <!-- 4. Projects -->
+    <section id="projects">
+      <div class="section-header">
+        <h2>Projects</h2>
+      </div>
+      <div class="grid-container">
+
+        <article class="card">
+          <div class="card-top">
+            <div>
+              <h3 class="card-title"><a href="projects/nyc-taxi-analysis.html" target="_blank" rel="noopener noreferrer">NYC Yellow Taxi Trip Analysis</a></h3>
+              <div class="card-subtitle">Python &middot; Pandas &middot; GeoPandas &middot; Statsmodels</div>
+              <span class="badge-sub">Data Science &amp; Analytics</span>
+            </div>
+            <div class="card-meta">
+              <strong>Columbia MSAFA</strong><br>
+              2026
+            </div>
+          </div>
+          <div class="card-content">
+            <ul>
+              <li>Cleaned and analyzed 13.5M+ NYC yellow cab trip records (Jan&ndash;May 2026) after removing outliers and missing values, building a geospatial pipeline with GeoPandas to map pickup zones and identify the highest-value and shortest-distance neighborhoods.</li>
+              <li>Built an OLS regression explaining 84% of fare variation from trip distance, duration, passenger count, and payment method; also aggregated three expert forecasters via a constrained linear regression to identify the best-performing predictor of binary outcomes.</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- 5. Additional Information -->
     <section id="additional">
       <div class="section-header">
         <h2>Additional Information</h2>
@@ -576,7 +662,25 @@
 
         <div class="info-tile">
           <h3><i class="fa-solid fa-trophy"></i> Athletics &amp; Competitions</h3>
-          <p>Demonstrated sustained success in both team and individual sports; basketball championship-winner in Geneva GAB tournament; won 2nd place in local tennis competition; achieved sub-30-second 50-meter freestyle swim.</p>
+          <p>Demonstrated sustained success in both team and individual sports; basketball championship-winner in Geneva GAB tournament; won 2nd place in local tennis competition; completed a half marathon in 1 hour 50 minutes.</p>
+        </div>
+
+        <div class="info-tile">
+          <h3><i class="fa-solid fa-language"></i> Languages</h3>
+          <div class="lang-list">
+            <div class="lang-row">
+              <div class="lang-label"><span class="lang-name">Greek</span><span class="lang-level">Native</span></div>
+              <div class="lang-bar"><div class="lang-bar-fill" style="width: 100%;"></div></div>
+            </div>
+            <div class="lang-row">
+              <div class="lang-label"><span class="lang-name">English</span><span class="lang-level">Fluent</span></div>
+              <div class="lang-bar"><div class="lang-bar-fill" style="width: 90%;"></div></div>
+            </div>
+            <div class="lang-row">
+              <div class="lang-label"><span class="lang-name">French</span><span class="lang-level">Fluent</span></div>
+              <div class="lang-bar"><div class="lang-bar-fill" style="width: 90%;"></div></div>
+            </div>
+          </div>
         </div>
 
       </div>
