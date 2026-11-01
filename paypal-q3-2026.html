@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thoughts on PayPal Q3 Earnings | Saby Errikos Camhis</title>
+  <meta name="description" content="PayPal after Q3 2026: what it takes to reach mid-single-digit transaction margin growth, and what the stock is worth in 2030 with no multiple expansion." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --columbia-blue: #9BDDFF;
+      --columbia-blue-dark: #6ba8dc;
+      --columbia-navy: #1D3557;
+      --cbs-blue: #002B7F;
+      --bg-light: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --text-main: #1E293B;
+      --text-muted: #64748B;
+      --border-color: #E2E8F0;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-main);
+      line-height: 1.7;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.8rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .nav-brand {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--columbia-navy);
+      text-decoration: none;
+    }
+
+    .nav-back {
+      color: var(--text-muted);
+      font-weight: 500;
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+
+    .nav-back:hover { color: var(--columbia-navy); }
+
+    .hero {
+      background: linear-gradient(135deg, rgba(155, 221, 255, 0.25) 0%, rgba(248, 250, 252, 1) 100%);
+      padding: 3rem 1.5rem 2.25rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .hero-inner {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .kicker {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--columbia-blue-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .hero h1 {
+      font-size: 2.1rem;
+      font-weight: 700;
+      color: var(--columbia-navy);
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+      margin-top: 0.4rem;
+    }
+
+    .byline {
+      margin-top: 0.9rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-left: 3px solid var(--columbia-blue);
+      padding-left: 0.75rem;
+    }
+
+    article {
+      max-width: 760px;
+      margin: 2.5rem auto 3rem;
+      padding: 0 1.5rem;
+    }
+
+    article h2 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--columbia-navy);
+      margin: 2.5rem 0 1rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 2px solid var(--columbia-blue);
+    }
+
+    article p {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+
+    article ul, article ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1rem;
+    }
+
+    article li {
+      margin-bottom: 0.5rem;
+    }
+
+    strong { color: var(--columbia-navy); }
+
+    .table-wrap {
+      overflow-x: auto;
+      margin: 1.25rem 0 1.5rem;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+      font-variant-numeric: tabular-nums;
+    }
+
+    th, td {
+      padding: 0.6rem 0.8rem;
+      text-align: right;
+      border-bottom: 1px solid var(--border-color);
+      white-space: nowrap;
+    }
+
+    th:first-child, td:first-child {
+      text-align: left;
+      white-space: normal;
+      min-width: 170px;
+    }
+
+    thead th {
+      background: rgba(155, 221, 255, 0.2);
+      color: var(--columbia-navy);
+      font-weight: 600;
+    }
+
+    tbody tr:last-child td { border-bottom: none; }
+
+    tr.total td {
+      font-weight: 700;
+      color: var(--columbia-navy);
+      background: var(--bg-light);
+    }
+
+    .disclaimer {
+      margin-top: 2.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border-color);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    footer {
+      border-top: 1px solid var(--border-color);
+      background-color: #FFFFFF;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 1.6rem; }
+      .nav-container { padding: 0.8rem 1rem; }
+      article { padding: 0 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="nav-brand">Saby Errikos Camhis</a>
+      <a href="index.html#writing" class="nav-back">&larr; Back to homepage</a>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="kicker">Thoughts on PayPal Q3 Earnings</div>
+      <h1>PayPal at 10x: You Don&rsquo;t Need Growth, But It Sure Helps</h1>
+      <div class="byline">November 2026 &middot; Eric Camhis</div>
+    </div>
+  </div>
+
+  <article>
+
+    <p>PayPal&rsquo;s third-quarter results, reported on October 27, were the clearest sign yet that the company is starting to turn around. The business is not fixed, and branded checkout is still growing slowly. But under CEO Enrique Lores, PayPal is getting more of its growth from businesses other than the checkout button. Its costs are coming down faster than planned, and it keeps returning large amounts of cash to shareholders. Below I look at whether that is enough to deliver the growth management is promising, and what the stock is worth if it does.</p>
+
+    <h2>Three for three under new management</h2>
+
+    <p>Lores took over as CEO on March 1, 2026. Since then, PayPal has beaten Wall Street&rsquo;s earnings-per-share estimate in all three quarters he has reported:</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Quarter</th><th>Non-GAAP EPS</th><th>Consensus</th><th>Result</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Q1 2026</td><td>$1.34</td><td>$1.27</td><td>Beat</td></tr>
+          <tr><td>Q2 2026</td><td>$1.38</td><td>$1.28</td><td>Beat; full-year guidance raised</td></tr>
+          <tr><td>Q3 2026</td><td>$1.45</td><td>$1.31</td><td>Beat; full-year guidance raised again</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>So far, Lores has guided conservatively and then beaten his own numbers:</p>
+    <ul>
+      <li><strong>Full-year EPS guidance:</strong> in February, PayPal guided 2026 non-GAAP EPS to anywhere from a low-single-digit decline to slightly positive versus $5.31 in 2025. It raised that to $5.38 in July and to about $5.60 in October, roughly 5&ndash;6% growth.</li>
+      <li><strong>Q3 EPS:</strong> management had guided Q3 EPS to decline year over year. It grew 8%.</li>
+      <li><strong>Q3 operating expenses:</strong> management guided high-single-digit growth. They grew 1%.</li>
+    </ul>
+
+    <p>Revenue was the one blemish in Q3: $8.58 billion, up 2%, and below consensus.</p>
+
+    <h2>What Q3 showed</h2>
+
+    <p><strong>Branded checkout has stopped getting worse.</strong> Volume through the PayPal checkout button has grown 1&ndash;2% for four straight quarters. That holds even with a roughly 70 basis point drag from the EU removing its de minimis import tax exemption. U.S. checkout improved for a third straight quarter.</p>
+
+    <p><strong>The playbook is working where it has been applied.</strong> At large merchants where PayPal rolled out its full playbook (new checkout flow, Pay Later placement, joint marketing), it gained relative share of checkout over the last four quarters. PayPal gave no aggregate number, but it did give two examples:</p>
+    <ul>
+      <li>At a leading U.S. sports entertainment platform, PayPal volume grew more than 40% over six months after the partnership was renewed.</li>
+      <li>At a large U.S. omnichannel retailer, Pay Later&rsquo;s share of the merchant&rsquo;s mix went from 7% to 20% after the offer was expanded.</li>
+    </ul>
+    <p>Management underwrites these investments over two to three years, and closer to three for the largest merchants.</p>
+
+    <p><strong>The other businesses are growing quickly:</strong></p>
+    <ul>
+      <li><strong>Venmo:</strong> payment volume grew double digits for the eighth straight quarter, and revenue per account is also growing double digits. Pay with Venmo volume rose 43%. Venmo debit card monthly users reached 6.7 million, up more than 55%.</li>
+      <li><strong>Buy Now, Pay Later and financial services:</strong> Pay Later volume grew 25%. Financial services (BNPL, credit, debit and merchant lending) now make up more than 20% of transaction margin dollars and are growing double digits.</li>
+      <li><strong>Braintree:</strong> volume grew 10%. The share of merchants buying value-added services such as risk tools and payouts rose to 6% from 5%.</li>
+    </ul>
+
+    <p><strong>Costs are being cut faster than planned.</strong> PayPal now expects more than $700 million of run-rate savings by the end of 2026, toward at least $1.5 billion over two to three years. Headcount is down by more than 2,000, and three layers of management are gone. Non-transaction operating expenses grew just 1% in Q3.</p>
+
+    <h2>Can PayPal grow transaction margin dollars by mid-single digits?</h2>
+
+    <p>The metric that matters is transaction margin dollars (TM$): revenue minus transaction costs and losses, essentially PayPal&rsquo;s gross profit. Management&rsquo;s medium-term target is mid-single-digit TM$ growth. It says that does not require branded checkout to return to its historical growth rate.</p>
+
+    <p>The starting point is lower than the headlines suggest:</p>
+    <ul>
+      <li><strong>2026 as a whole:</strong> TM$ is guided to about $15.7 billion, up roughly 1.5% from $15.5 billion in 2025. Excluding interest on customer balances, which is shrinking as rates fall, growth is about 2.5%.</li>
+      <li><strong>By quarter:</strong> TM$ grew 1% in Q2 and 2% in Q3, and Q4 is guided &ldquo;slightly positive.&rdquo;</li>
+    </ul>
+
+    <p>PayPal reports as a single segment, so the split below is my own estimate. It is built from company disclosures and reconciled to the 2025 actuals and the 2026 guide. One important point: branded checkout <em>volume</em> growing 1&ndash;2% does not mean branded checkout <em>TM$</em> is growing 1&ndash;2%. PayPal is spending on co-marketing and merchant incentives, and that compresses the take rate. My estimate is that branded TM$ is roughly flat today.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Business (my estimates)</th><th>2026E TM$</th><th>Share</th><th>Growing now (est.)</th><th>Bear</th><th>Base (today&rsquo;s rates)</th><th>Guidance case</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Branded checkout</td><td>$7.6B</td><td>48%</td><td>~0%</td><td>&minus;2%</td><td>0%</td><td>+1.5%</td></tr>
+          <tr><td>Other PayPal (P2P, cross-border, credit &amp; financial services)</td><td>$5.1B</td><td>32%</td><td>~+3.5%</td><td>+2%</td><td>+3.5%</td><td>+9%</td></tr>
+          <tr><td>Venmo</td><td>$1.0B</td><td>6%</td><td>~+15%</td><td>+10%</td><td>+15%</td><td>+15%</td></tr>
+          <tr><td>Braintree / PSP</td><td>$0.9B</td><td>6%</td><td>~+8%</td><td>+5%</td><td>+8%</td><td>+12%</td></tr>
+          <tr><td>Interest on customer balances</td><td>$1.1B</td><td>7%</td><td>~&minus;10%</td><td>&minus;8%</td><td>&minus;5%</td><td>&minus;5%</td></tr>
+          <tr class="total"><td>Total TM$ growth</td><td>$15.7B</td><td></td><td>~1.5%</td><td>~0%</td><td>~2&ndash;3%</td><td>~5%</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p><strong>What the math says:</strong></p>
+    <ul>
+      <li><strong>At today&rsquo;s rates, TM$ grows about 2&ndash;3% a year.</strong> That is above 2026&rsquo;s 1.5% only because the drag from interest income should ease as rate cuts slow. It is healthy, but well short of mid-single digits.</li>
+      <li><strong>The guidance case needs real acceleration.</strong> To reach ~5% with branded checkout at 1.5%, the growth businesses (Other PayPal, Venmo and Braintree combined) need to grow about 10% a year, up from roughly 6% today. On top of that, branded TM$ has to move from flat to +1.5%.</li>
+      <li><strong>The heaviest lift is in &ldquo;Other PayPal,&rdquo;</strong> which has to go from about 3.5% to about 9%. That depends on financial services keeping a double-digit pace while the slower pieces of the bucket hold up.</li>
+    </ul>
+
+    <p>So the target is achievable, but it is not a &ldquo;couple of points&rdquo; away. The growth engines need to roughly double their combined growth rate, which is exactly what the reinvested cost savings are meant to fund. That makes 2027 and 2028 the key tests.</p>
+
+    <h2>What about operating expenses?</h2>
+
+    <p>Non-transaction operating expenses grew just 1% in Q3, but that is not a run rate:</p>
+    <ul>
+      <li>They grew about 8% in Q1.</li>
+      <li>Full-year 2026 is guided to mid-single-digit growth, and Q4 to flat to low-single-digit growth.</li>
+      <li>The CFO said explicitly not to annualize the Q3 number, because 2027 will carry new investment in products, marketing and specialized sales teams.</li>
+    </ul>
+
+    <p>I assume opex grows 3% a year from 2027 to 2030. If the $1.5 billion of gross savings lands and roughly half is reinvested, net opex growth closer to 2% is plausible. I don&rsquo;t count on that.</p>
+
+    <h2>From TM$ to EPS: the buyback engine</h2>
+
+    <p>This is where capital allocation comes in. PayPal plans to buy back about $6 billion of stock in 2026. It has bought back about $6 billion over the last twelve months, and diluted shares were down 10.6% year over year in Q3. At about 10x earnings, roughly 100% of free cash flow going to buybacks and dividends retires around 11% of the share count a year.</p>
+
+    <p>Lores has done this before. As CEO of HP from late 2019, he turned down a hostile bid from Xerox in 2020, committed to returning 100% of free cash flow to shareholders, and launched a roughly $15 billion buyback plan. HP&rsquo;s diluted share count fell about 37% during his tenure. There is a clear parallel at PayPal: in 2026, its board rejected a $60.50-per-share approach from Stripe and Advent International as too low, choosing to back its own plan.</p>
+
+    <p>The key insight is simple. <strong>At 10x earnings, if the multiple holds, a shareholder earns roughly the free cash flow yield (about 13%) plus whatever net income grows.</strong> Growth is not needed for a low-teens return. What growth does is make it much more likely that the multiple holds.</p>
+
+    <h2>Valuation: what PayPal is worth in 2030 with no multiple expansion</h2>
+
+    <p><strong>Assumptions</strong> (2027&ndash;2030):</p>
+    <ul>
+      <li><strong>Starting point:</strong> share price of $57 and 2026E non-GAAP EPS of $5.60, which gives a P/E of 10.2x.</li>
+      <li><strong>Multiple:</strong> P/E held at 10.2x. No multiple expansion in any case, and the share price rises with EPS.</li>
+      <li><strong>Buybacks:</strong> funded from free cash flow at the 2026 ratio (about 1.33x net income), minus a $0.56 dividend. Because the price rises with EPS, each dollar of buyback retires fewer shares over time.</li>
+      <li><strong>Opex:</strong> grows 3% a year.</li>
+      <li><strong>Tax rate:</strong> 19.5%.</li>
+      <li><strong>Stock-based compensation:</strong> about 10 million shares of dilution a year. SBC is already inside PayPal&rsquo;s non-GAAP EPS.</li>
+      <li><strong>Return:</strong> IRR measured from today to the end of 2030, including dividends.</li>
+    </ul>
+
+    <p><strong>The four cases:</strong></p>
+    <ul>
+      <li><strong>Bear:</strong> branded checkout loses share and its TM$ shrinks 2% a year, while the growth engines slow.</li>
+      <li><strong>Base:</strong> every business keeps growing at today&rsquo;s rate.</li>
+      <li><strong>Bull:</strong> management delivers mid-single-digit TM$ growth, with branded checkout at a conservative 1.5%.</li>
+      <li><strong>Bull + Ads:</strong> the bull case plus PayPal Ads reaching half of Uber&rsquo;s ad business, about $1 billion of revenue by 2030. Uber&rsquo;s ad business passed a $2 billion run rate at the end of 2025. I assume a 40% operating margin, much lower than a mature ads business would earn.</li>
+    </ul>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th></th><th>Bear</th><th>Base</th><th>Bull (guidance)</th><th>Bull + Ads</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>TM$ growth (2026&ndash;30 CAGR)</td><td>~0%</td><td>2.5%</td><td>5.4%</td><td>6.7%</td></tr>
+          <tr><td>Net income growth (CAGR)</td><td>&minus;4.6%</td><td>+1.6%</td><td>+8.8%</td><td>+10.1%</td></tr>
+          <tr><td>Share count change per year</td><td>~&minus;10%</td><td>~&minus;11%</td><td>~&minus;11%</td><td>~&minus;11%</td></tr>
+          <tr><td>EPS growth (CAGR)</td><td>6%</td><td>13.5%</td><td>22%</td><td>24%</td></tr>
+          <tr><td>2030 EPS</td><td>$7.08</td><td>$9.28</td><td>$12.47</td><td>$13.10</td></tr>
+          <tr><td>2030 value at 10.2x</td><td>$72</td><td>$94</td><td>$127</td><td>$133</td></tr>
+          <tr><td>Upside from $57</td><td>+26%</td><td>+66%</td><td>+123%</td><td>+134%</td></tr>
+          <tr class="total"><td>IRR incl. dividends</td><td>~7%</td><td>~14%</td><td>~22%</td><td>~23%</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p><strong>What this shows:</strong></p>
+    <ol>
+      <li><strong>Even the bear case doesn&rsquo;t lose money if the multiple holds.</strong> Net income shrinks every year, but buybacks keep EPS growing about 6% a year. The real risk is that a business with shrinking profits gets re-rated lower. At 8x, the bear case returns about 1% a year.</li>
+      <li><strong>The base case already clears a 13&ndash;14% IRR.</strong> It needs no acceleration, only today&rsquo;s growth rates, a stable multiple, and the buyback program. Opex is the biggest swing factor: at 2% growth the base IRR rises to about 15.5%, and at 4% it falls to about 12%.</li>
+      <li><strong>Hitting guidance roughly doubles the stock by 2030.</strong> Mid-single-digit TM$ growth plus 3% opex growth turns into about 9% net income growth. With buybacks on top, EPS grows at more than 20% a year, all at today&rsquo;s multiple.</li>
+      <li><strong>Ads are a small cherry.</strong> Even at half of Uber&rsquo;s scale, ads add only about 1&ndash;2 points of IRR. They are real optionality, but not the thesis.</li>
+    </ol>
+
+    <p>One caveat on timing: management is targeting 2027 EPS growth similar to 2026 (about 5&ndash;6%) because it plans to step up investment. My model shows faster 2027 growth than that in every case except the bear case. The 2027 path will likely be slower and more back-end loaded than these numbers. What drives the IRR is where the business ends up in 2030.</p>
+
+    <h2>Margin of safety: what I&rsquo;m not counting</h2>
+
+    <ul>
+      <li><strong>Reinvested savings.</strong> The cost program targets at least $1.5 billion of gross run-rate savings. A large share is going into financial services, Venmo monetization, specialized Braintree sales teams, and taking the U.S. merchant playbook to Europe in 2027. I hold opex at 3% growth and give no credit for the extra growth this spending could buy.</li>
+      <li><strong>Checkout share gains.</strong> At merchants with the full playbook, PayPal&rsquo;s share of checkout is improving, and the examples above are material: +40% volume at one partner, Pay Later share going from 7% to 20% at another. Only a small part of the merchant base has the full playbook so far. I assume none of this spreads beyond 1.5% branded growth, even in the bull case.</li>
+      <li><strong>PayPal Ads beyond the cherry.</strong> PayPal sees purchase data across hundreds of millions of accounts and millions of merchants, so advertisers can measure actual purchases across many stores rather than one retailer&rsquo;s site. Mark Grether runs PayPal Ads; he previously built Uber&rsquo;s ad business and led product strategy for Amazon&rsquo;s advertising. PayPal launched Transaction Graph Insights and Measurement in January 2026 and an Ads Manager for small merchants. PayPal has not disclosed ad revenue, so I give ads no value outside the Bull + Ads case.</li>
+    </ul>
+
+    <h2>What could go wrong</h2>
+
+    <ul>
+      <li><strong>Branded checkout could start shrinking.</strong> Apple Pay, Shop Pay and AI-agent checkout keep competing for the button, and branded checkout is still about half of TM$.</li>
+      <li><strong>The quality of Q3&rsquo;s profit growth was mixed.</strong> TM$ grew $79 million, but that came from lower transaction and credit losses, partly a one-time reserve release, rather than from better pricing.</li>
+      <li><strong>Net income is still declining.</strong> It is down about 5&ndash;6% in 2026, so today&rsquo;s EPS growth comes entirely from buybacks. In my base case, net income only just inflects. It needs to grow for the multiple to hold.</li>
+      <li><strong>A credit downturn would hit BNPL and credit,</strong> which are the fastest-growing profit engines.</li>
+      <li><strong>Lores&rsquo;s HP record cuts both ways.</strong> HP&rsquo;s revenue fell from about $58.8 billion to $55.3 billion during his tenure. The per-share playbook works, but at PayPal it has to come with growth.</li>
+    </ul>
+
+    <h2>Bottom line</h2>
+
+    <p>At about $57 a share and roughly 10x earnings, the market is pricing PayPal as a business that won&rsquo;t grow. The math says that doesn&rsquo;t need to change for the stock to work:</p>
+    <ul>
+      <li><strong>At today&rsquo;s growth rates,</strong> buybacks alone deliver EPS growth in the low teens and roughly a 14% IRR to 2030.</li>
+      <li><strong>If Lores delivers mid-single-digit TM$ growth,</strong> which needs the growth engines to roughly double their pace, the stock is worth about $127 in 2030 at the same multiple, a 22% IRR.</li>
+      <li><strong>What I&rsquo;m not counting</strong> is the margin of safety: reinvested savings, checkout share gains spreading, and most of the ads opportunity.</li>
+    </ul>
+
+    <p>The biggest risk is not missing guidance. It is net income continuing to shrink and the market cutting the multiple. The next proof point is PayPal&rsquo;s 2027 guidance in February.</p>
+
+    <p class="disclaimer">This post reflects my personal views and analysis and is not investment advice. Business-level TM$ figures and all projections are my own estimates; PayPal reports as one segment.</p>
+
+  </article>
+
+  <footer>
+    <p>&copy; 2026 Saby Errikos Camhis. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
